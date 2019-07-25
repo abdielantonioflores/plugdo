@@ -13,13 +13,14 @@ if (!(Test-Path -Path $OriginPath )) {
   New-Item  -Path "$Path\$NamaFile\source\controllers" -Name "ctrl-pages.js" -Value 'mvc.controller({
       name: "customer",
       action: "index",
-      view: "index.ejs" // Also a directory, view: "customer/index/home.ejs"
-    }, function (req) {
+      path: "/",
+      view:"index.ejs"
+    }, function (req, ) {
       return {
-          title: "Customer Home Page",
-          message: "Welcome to our web page!"
-      };
-    }); '
+        title: "Customer Home Page",
+        message: "Welcome to our web page!"
+    };
+    });'
   New-Item -ItemType "directory" -Path "$Path\$NamaFile\source\dependencies"
   New-Item -ItemType "directory" -Path "$Path\$NamaFile\source\plugdo"
   New-Item -ItemType "directory" -Path "$Path\$NamaFile\source\plugdo\collector"
